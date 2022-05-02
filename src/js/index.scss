@@ -1,0 +1,594 @@
+// MY custom colors:
+$dark: #1A1A1D;
+$grey: #363638;
+$greyText: #7c7c7c;
+$mutedPink: #6F2232;
+$pink: #950740;
+$highlightPink: #C3073F;
+
+
+
+
+
+html, body {
+     overflow: hidden;
+     height: 100%;
+     width: 100%;
+     max-height: 100%;
+     -webkit-user-select: none;
+     /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Light', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+}
+
+
+
+
+
+/*----- ScrollBar ----- ScrollBar ----- ScrollBar ----- ScrollBar ----- ScrollBar -----*/
+/* width */
+::-webkit-scrollbar {
+     width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+     background: #4E4E50;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+     background: $mutedPink;
+}
+
+/* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+background: $pink;
+}
+
+#flareMusicContainer {
+     height: 100%;
+     -webkit-user-select: none;
+}
+
+.content-wrapper {
+     height: 100%;
+     background-color: black;
+     padding-top: 50px;
+     transition: background-color 1s;
+}
+
+
+
+
+
+/*----- Navbar ----- Navbar ----- Navbar ----- Navbar ----- Navbar -----*/
+.navbar {
+     position: absolute;
+     top: 0;
+     border-bottom: 1px solid $highlightPink;
+     width: 100%;
+     height: 50px;
+     padding: 0;
+     background-color: black;
+     -webkit-app-region: no-drag;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: flex-start;
+}
+
+.navbar * {
+     text-decoration: none;
+}
+
+.flareIconHolder {
+     height: 49px;
+     display: flex;
+     color: white;
+     font-size: 1.1em;
+     margin-right: 20px;
+     line-height: 50px;
+}
+
+.flareIconHolder img {
+     height: 100%;
+     position: relative;
+     margin-right: 10px;
+}
+
+.navbarIcon {
+     height: 20px;
+     width: 20px;
+     vertical-align: middle;
+}
+
+.navbarDraggable {
+     -webkit-app-region: drag;
+     flex-grow: 500;
+     height: 50px;
+     border-left: 1px solid $highlightPink;
+     border-right: 1px solid $highlightPink;
+}
+
+.windowButton {
+     background-color: black;
+     color: $highlightPink;
+     height: 49px;
+     width: 49px;
+     padding: 15px;
+     padding-top: 10px;
+     align-self: flex-end;
+
+}
+
+.windowButton:hover {
+     background-color: $highlightPink;
+     color: white;
+}
+
+.nav-link {
+     padding: 0;
+     padding-left: 2.5%;
+     padding-right: 2.5%;
+     line-height: 50px;
+     color: white;
+}
+
+.activeNavItem {
+     background-color: $pink;
+}
+
+.nav-link:hover {
+     color: white;
+     background-color: $highlightPink;
+}
+
+.btn-custom {
+     border: 0;
+     background-color: $mutedPink;
+     height: 40px;
+     margin: 5px;
+     font-size: 0.8em;
+     width: 100px;
+     color: white;
+}
+
+.btn-custom:hover {
+     background-color: $pink;
+     color: white;
+}
+
+.btn-custom:active {
+     background-color: $highlightPink;
+     box-shadow: none;
+     border: none;
+}
+
+.btn-custom:active:focus {
+     background-color: $pink;
+     box-shadow: none;
+     border: none;
+}
+
+.btn-custom:visited {
+     background-color: $pink;
+     box-shadow: none;
+     border: none;
+}
+
+
+
+
+
+/*----- Main Container ----- Main Container ----- Main Container ----- Main Container ----- Main Container -----*/
+.container {
+     max-width: 100%;
+     height: 100%;
+     padding: 0;
+}
+
+.contentColumn {
+     height: 100%;
+}
+
+
+
+
+
+/*----- view Title bar ----- view Title bar ----- view Title bar ----- view Title bar ----- view Title bar -----*/
+.titleAndCount {
+     display: flex;
+     flex-wrap: nowrap;
+     flex-direction: row;
+     align-items: baseline;
+     border-bottom: 1px solid $grey;
+     padding-bottom: 7px;
+}
+
+.viewTitle {
+     flex-grow: 100;
+     color: white;
+}
+
+.viewCount {
+     color: $greyText;
+     padding-right: 7px;
+}
+
+
+
+
+
+/*----- AlbumsView ----- AlbumsView ----- AlbumsView ----- AlbumsView ----- AlbumsView -----*/
+.AlbumsView {
+     width: 100%;
+     height: 100%;
+     background-color: black;
+     color: white;
+     padding: 0.5%;
+}
+
+.albumsList {
+     width: 72%;
+     height: -webkit-calc(100% - 100px);
+     background-color: $dark;
+     overflow-y: auto;
+     display: inline-block;
+     padding: 0.5%;
+}
+
+/*----- albumItems ----- albumItems ----- albumItems ----- albumItems ----- albumItems -----*/
+.albumIterationHolder {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+}
+
+.albumItem {
+     width: 19%;
+     margin: 0.5%;
+     aspect-ratio: 1 / 1.2;
+     background-color: $grey;
+     cursor: pointer;
+}
+
+.albumItemCoverimg {
+     width: 100%;
+     /* makes images look a bit better when scaled down. makes positive difference when img is high resolution*/ 
+     image-rendering: -webkit-optimize-contrast;
+}
+
+.albumTitle {
+     display: block;
+     font-size: 1em;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     padding-left: 5px;
+     padding-right: 5px;
+}
+
+.albumArtist {
+     display: block;
+     font-size: 0.9em;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     padding-left: 5px;
+     padding-right: 5px;
+     padding-bottom: 5px;
+}
+
+.currentlyPlayingAlbum {
+     background-color: $pink;
+}
+
+
+
+
+
+/*----- songsList ----- songsList ----- songsList ----- songsList ----- songsList -----*/
+.songsList {
+     background-color: $dark;
+     width: 27.5%;
+     height: -webkit-calc(100% - 100px);
+     position: relative;
+     float: right;
+     padding: 0.5%;
+     overflow-y: auto;
+}
+
+.songListAlbumCover {
+     border: 1px solid $highlightPink
+}
+
+.songListAlbumInfo {
+     text-align: center;
+     padding-bottom: 15px;
+     margin-top: 5px;
+     border-bottom: 1px solid $grey;
+}
+
+.songListAlbumTitle {
+     font-size: 1.4em;
+     display: block;
+}
+
+/* followed tutorial for decorative lines surrounding text*/
+.songListAlbumBy {
+     display: flex;
+     flex-direction: row;
+     font-size: 0.8em;
+     padding-left: 10%;
+     padding-right: 10%;
+     color: $greyText;
+}
+
+.songListAlbumBy:before, .songListAlbumBy:after {
+     content: "";
+     flex: 1 1;
+     border-bottom: 1px solid $highlightPink;
+     margin: auto;
+}
+
+.songListAlbumBy:before {
+     margin-right: 10px;
+}
+
+.songListAlbumBy:after {
+     margin-left: 10px;
+}
+
+
+.songListAlbumArtist {
+     font-size: 1.1em;
+}
+
+.songListAlbumYear {
+     display: block;
+     color: $greyText;
+}
+
+.songListAlbumGenres {
+     color: $greyText;
+}
+
+.iconInButton {
+     color: white;
+     height: 18px;
+     width: 18px;
+}
+
+.songListAlbumRuntime {
+     display: block;
+     text-align: center;
+     color: $greyText;
+}
+
+
+
+
+
+/*----- songItem ----- songItem ----- songItem ----- songItem ----- songItem -----*/
+.songItem {
+     width: 99%;
+     margin: 0% 0.25% 0% 0.25%;
+     padding: 5px;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     cursor: pointer;
+     border-bottom: 1px solid $grey;
+     transition: all 0.2s ease-out;
+
+}
+
+
+.songItem:hover {
+     background-color: $grey;
+}
+
+.primarySongInfo {
+     width: 100%;
+     display: flex;
+     align-items: flex-start;
+}
+
+.songItemSongTrackNumber {
+     /*font-family: "Menlo", "Consolas";*/
+     display: block;
+     color: $highlightPink;
+     border-right: 1px solid $highlightPink;
+     padding-right:5px;
+}
+
+.songItemSongTitle {
+     /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+     display: block;
+     /*flex-grow: 100;*/
+     padding-left: 5px;
+     padding-right: 5px;
+     max-width: 90%;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+
+}
+
+.songItemSongDuration {
+     /*font-family: "Menlo", "Consolas";*/
+     display: block;
+     margin-left: auto;
+     color: $highlightPink;
+     border-left: 1px solid $highlightPink;
+     padding-left: 5px;
+}
+
+.secondarySongInfo {
+     width: 100%;
+     display: flex;
+     font-size: 0.8em;
+     color: $greyText;
+}
+
+.textSeparator {
+     padding-left: 3px;
+     padding-right: 3px;
+}
+
+.songItemSongLikedSong {
+     display: block;
+     padding-right: 7px;
+     padding-left: 1px;
+}
+
+.songItemSongLikedSong svg {
+     width: 15px;
+     height: 15px;
+     cursor: pointer;
+}
+
+.songItemSongLikedSong svg:hover{
+     color: $highlightPink;
+}
+
+.songItemSongLikedSong .likedTrue {
+     color: $highlightPink !important;
+}
+
+.songItemSongFileType {
+     display: block;
+     padding-left: 4px;
+     padding-right: 2px;
+}
+
+.songItemSongIsLossless {
+     display: block;
+     padding-left: 2px;
+     padding-right: 2px;
+}
+
+.songItemSongSoundQuality {
+     display: block;
+     padding-left: 2px;
+}
+
+
+.currentlyPlayingSong {
+     background-color: $pink;
+}
+
+.currentlyPlayingSong * {
+     color: black;
+     border-color: black;
+}
+
+.currentlyPlayingSong .songItemSongTitle {
+     color: white;
+}
+
+.currentlyPlayingSong:hover {
+     background-color: $highlightPink;
+}
+
+
+/*----- playerControls ----- playerControls ----- playerControls ----- playerControls ----- playerControls -----*/
+.playerControls {
+     background-color: $mutedPink;
+     border-top: 1px solid $highlightPink;
+     width: 100%;
+     height: 100px;
+     position: fixed;
+     bottom: 0;
+     display: flex;
+}
+
+.playerControlsSongInfo {
+     height: 100%;
+     color: white;
+     width: 33%;
+
+}
+
+.playMeCover {
+     height: 100%;
+     position: relative;
+     float: left;
+}
+
+.playMeText {
+     position: relative;
+     float: right;
+     float: bottom;
+     padding: 5px;
+     width: -webkit-calc(100% - 100px);
+}
+
+.playMeInfo {
+     font-size: 0.9em;
+     color: white;
+     display: block;
+     width: 100%;
+}
+
+.playerControlsButtons {
+     width: 33%;
+     height: 100%;
+     text-align: center;
+}
+
+.progressBarHolder {
+     background-color: black;
+     border-radius: 5px;
+     width: 100%;
+     height: 5px;
+     margin-top: 20px;
+
+}
+
+.progressBarMover{
+     background-color: $highlightPink;
+     height: 5px;
+     border-radius: 5px;
+     transition: all 0.1s linear ;
+}
+
+.btn-playerControls {
+     background-color: $highlightPink;
+     width: 27%;
+}
+
+
+
+/*----- songsView ----- songsView ----- songsView ----- songsView ----- songsView -----*/
+.songsView {
+     width: 99%;
+     margin: 0.5%;
+     height: -webkit-calc(100% - 100px);
+     background-color: $dark;
+     overflow-y: auto;
+     display: inline-block;
+     padding: 0.5%;
+}
+
+.songsView .songItem {
+     color: white;
+}
+
+.songsViewAdditionalInfo {
+     color: $highlightPink;
+     /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+}
+
+.songItemSongArtist{
+     padding-left: 5px;
+}
+
+.songItemSongYear {
+     padding-left: 3px;
+     margin-right: 5px;
+}
+
+.songsViewAdditionalInfo .textSeparator {
+     padding-left: 5px;
+     padding-right: 5px;
+}
+
