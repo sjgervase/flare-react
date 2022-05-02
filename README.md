@@ -1,4 +1,4 @@
-# flare-react
+# Flare Music Player
 A lightweight music player built in an ElectronJS window with React. There are many, excellent music players already available. I wanted to make one that required no setup.
 
 Open the app, add a folder with music files, and click play!
