@@ -1,6 +1,8 @@
 # Flare Music Player
 A lightweight music player built in an ElectronJS window with React. There are many, excellent music players already available. I wanted to make one that required no setup.
 
+Built with ElectronJS, ReactJS, Howler.js, and Bootstrap
+
 Open the app, add a folder with music files, and click play!
 ![image](https://user-images.githubusercontent.com/103540180/166316135-b437abe0-726a-4f42-9f43-d703e74b8b43.png)
 
