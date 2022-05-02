@@ -6,7 +6,7 @@ Built with ElectronJS, ReactJS, Howler.js, and Bootstrap
 Open the app, add a folder with music files, and click play!
 ![image](https://user-images.githubusercontent.com/103540180/166316135-b437abe0-726a-4f42-9f43-d703e74b8b43.png)
 
-<a href="https://youtu.be/peRCJDqpM-Q">Click here to view a quick demo on YouTube</a>
+<a href="https://youtu.be/peRCJDqpM-Q" target="_blank">Click here to view a quick demo on YouTube</a>
 
 Features:
 - Flare remembers the paths of files, so after adding a directory those songs will appear in your library until they are deleted.
