@@ -4,7 +4,8 @@ A lightweight music player built in an ElectronJS window with React
 
 
 boot screen
-![image](https://user-images.githubusercontent.com/103540180/166307976-514904f8-135e-4681-9c2b-008e9b132101.png)
+![image](https://user-images.githubusercontent.com/103540180/166316135-b437abe0-726a-4f42-9f43-d703e74b8b43.png)
+
 
 
 - automatically adds all music files in all folders and subfolders of selected directory
